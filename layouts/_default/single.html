@@ -85,10 +85,10 @@
 <div class="author-meta">
 
   <div class="author">
-    	{{ if and (isset .Params "writer") $writer.email }}
+    {{ if and (isset .Params "writer") $writer.email }}
     <img alt='{{ .Params.writer | default .Site.Params.author }}' src="https://www.gravatar.com/avatar/{{ md5 $writer.email }}?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
     {{ else }}
-      <img alt='{{ .Params.writer | default .Site.Params.author }}' src="https://www.gravatar.com/avatar/{{ md5 .Site.Params.email }}?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    <img alt='{{ .Params.writer | default .Site.Params.author }}' src="{{ "img/avatar.png" | absURL }}" class='avatar avatar-72 photo' height='72' width='72'>
     {{ end }}
     <span>
       Written by:<a href="{{ $writer.link | default .Site.Params.authorlink | absURL}}" title="Posts by {{ .Params.writer | default .Site.Params.author }}" rel="author">{{ .Params.writer | default .Site.Params.author }}</a> </span>
